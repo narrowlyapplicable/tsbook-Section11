@@ -118,7 +118,7 @@ for path in range(path_max):
 # 各時刻の平滑化後平均値をプロット
 plt.figure(1)
 plt.plot(y, marker=".", linestyle="--")
-plt.plot(np.mean(np.mean(b, axis=2), axis=1), marker=".", linestyle="--")
+plt.plot(np.mean(b, axis=(1,2)), marker=".", linestyle="--")
 plt.title('Bootstrap Filter : smoothing(FFBSi)')
 plt.legend(["data", "smoothed"], frameon=True, edgecolor="b")
 plt.tight_layout(); plt.show()
