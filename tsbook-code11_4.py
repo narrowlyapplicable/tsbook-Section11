@@ -47,7 +47,7 @@ w[0,:] = 1/N
 # 時間順方向の処理
 for tt in np.arange(t_max)+1 :
     # 提案分布：状態方程式を使用。粒子を生成する。
-    x[tt,:] = np.random.normal(loc=x[tt-1,:], scale=np.sqrt(mod["V"][0][0]), size=N)
+    x[tt,:] = np.random.normal(loc=x[tt-1,:], scale=np.sqrt(mod["W"][0][0]), size=N)
     # 重みを更新。 bootstrap filterなので、観測方程式をそのまま使えば良い。
     w[tt,:] = w[tt-1,:] * sct.norm.pdf(y[tt], loc=x[tt,:], scale=np.sqrt(mod["V"]))
     # 重みの規格化
